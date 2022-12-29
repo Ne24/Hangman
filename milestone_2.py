@@ -8,11 +8,11 @@ word = random.choice(word_list)
 
 print(word)
 
-guess = None
+guess = ""
 
 
 
-while guess != 1 or not(guess.isalpha()):
+while len(guess) != 1 or not(guess.isalpha()):
 
     try:
         guess = input("Enter a single letter: ")
