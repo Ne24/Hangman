@@ -45,6 +45,8 @@ class Hangman():
                 guess = input("Enter a single letter: ")
                 if not(len(guess) == 1) and not(guess.isalpha()):
                     print("Invalid letter. Please, enter a single alphabetical character")
+                    error_description = "Oops invalid input: Not a single alphabetical character "    
+                    raise Exception()
                 elif guess in self.list_of_guesses:
                     print("You already tried that letter!")
                 elif len(guess) > 1:
@@ -58,6 +60,11 @@ class Hangman():
             except:
                 print(error_description)
             else:
+                
                 break   
         self.check_guess(guess)
+        # self.list_of_guesses.append(guess)
+
         return self.list_of_guesses
+
+
