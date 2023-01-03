@@ -53,16 +53,13 @@ class Hangman():
     import random
 
     def __init__(self, word_list, num_lives = 5 ) -> None:
-
-        self.word_list = word_list
-        self.num_lives = num_lives
-
-        word = random.choice(self.word_list)
-        word_guessed = []
+        
+        self.word = random.choice(self.word_list)
+        self.word_guessed = []
 
         
-        for x in word:
-            word_guessed.append("_")
+        for x in self.word:
+            self.word_guessed.append("_")
         
         # count =0 
         # #while num_lives >= 1:
@@ -75,20 +72,21 @@ class Hangman():
         #         # num_lives -=1
               
 
-        num_letters = 0
+        self.num_letters = 0
         uniquecounter = 0
 
-        for z in word:
+        for z in self.word:
             if uniquecounter > 0:
                 if z not in word[:uniquecounter]:
-                    num_letters +=1
+                    self.num_letters +=1
             else:
-                num_letters +=1 
+                self.num_letters +=1 
 
             uniquecounter +=1
 
-        num_lives = self.num_lives
-        word_list = self.word_list
-        list_of_guesses = []
-
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.list_of_guesses = []
     pass
+
+    
