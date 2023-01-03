@@ -23,3 +23,39 @@ class Hangman():
 
             uniquecounter +=1        
     pass   
+
+
+    def check_guess(self,guess):
+        """This function checks if the guess provided is in the word"""
+
+        guess = guess.lower()
+
+        if guess in self.word:
+            print(f"Good guess {guess} is in the word!")
+        # else:
+        #     print(f"Sorry {guess} is not in word. Try again.")  
+
+          
+
+    def ask_for_input(self):
+
+        while True:
+
+            try:
+                guess = input("Enter a single letter: ")
+                if not(len(guess) == 1) and not(guess.isalpha()):
+                    print("Invalid letter. Please, enter a single alphabetical character")
+                elif guess in self.list_of_guesses:
+                    print("You already tried that letter!")
+                elif len(guess) > 1:
+                    error_description = "Oops invalid input: More than one letter"    
+                    raise Exception()
+                elif not(guess.isalpha()):
+                    error_description = " Oops invalid input: This is not a letter"   
+                    raise Exception() 
+            except:
+                print(error_description)
+            else:
+                break   
+        self.check_guess(guess)
+        self.list_of_guesses.append(guess)
