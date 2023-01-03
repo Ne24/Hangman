@@ -57,7 +57,6 @@ class Hangman():
         self.word = random.choice(self.word_list)
         self.word_guessed = []
 
-        
         for x in self.word:
             self.word_guessed.append("_")
         
@@ -77,7 +76,7 @@ class Hangman():
 
         for z in self.word:
             if uniquecounter > 0:
-                if z not in word[:uniquecounter]:
+                if z not in self.word[:uniquecounter]:
                     self.num_letters +=1
             else:
                 self.num_letters +=1 
