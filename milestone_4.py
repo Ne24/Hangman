@@ -65,6 +65,6 @@ class Hangman():
         self.check_guess(guess)
         # self.list_of_guesses.append(guess)
 
-        return self.list_of_guesses
+        # return self.list_of_guesses
 
 
