@@ -5,7 +5,7 @@ class Hangman():
 
         self.word_list = word_list
         self.num_lives = num_lives
-        self.word = random.choice(word_list)
+        self.word = random.choice(word_list).lower()
         self.word_guessed = []
         self.list_of_guesses = []
         self.num_letters = 0
@@ -56,15 +56,13 @@ class Hangman():
                     error_description = " Oops invalid input: This is not a letter"   
                     raise Exception() 
                 else:
+                    self.check_guess(guess)
                     self.list_of_guesses.append(guess)
             except:
                 print(error_description)
             else:
-                
                 break   
-        self.check_guess(guess)
         # self.list_of_guesses.append(guess)
-
         # return self.list_of_guesses
 
 
