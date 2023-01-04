@@ -30,7 +30,7 @@ class Hangman():
 
         guess = guess.lower()
 
-        if guess in self.word:
+        if guess in self.word.lower():
             print(f"Good guess! {guess} is in the word.")
         # else:
         #     print(f"Sorry {guess} is not in word. Try again.")  
