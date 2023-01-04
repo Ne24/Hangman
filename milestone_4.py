@@ -49,8 +49,7 @@ class Hangman():
                     
                 else:
                     self.check_guess(guess)
-                    self.list_of_guesses.append(guess)
-                    # self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
+                    # self.list_of_guesses.append(guess)
+                    self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
                     break   
-        # self.list_of_guesses.append(guess)
         return
