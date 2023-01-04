@@ -57,7 +57,7 @@ class Hangman():
                     raise Exception() 
                 else:
                     self.check_guess(guess)
-                    self.list_of_guesses.append(guess)
+                    self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
             except:
                 print(error_description)
             else:
@@ -66,3 +66,4 @@ class Hangman():
         # return self.list_of_guesses
 
 
+Hangman.ask_for_input()
