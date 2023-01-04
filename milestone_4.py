@@ -33,9 +33,7 @@ class Hangman():
         if guess in self.word.lower():
             print(f"Good guess! {guess} is in the word.")
         # else:
-        #     print(f"Sorry {guess} is not in word. Try again.")  
-
-          
+        #     print(f"Sorry {guess} is not in word. Try again.")            
 
     def ask_for_input(self):
 
@@ -56,8 +54,10 @@ class Hangman():
                     error_description = " Oops invalid input: This is not a letter"   
                     raise Exception() 
                 else:
+                    self.list_of_guesses.append(guess)
                     self.check_guess(guess)
-                    self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
+                    # self.list_of_guesses.append(guess)
+                    # self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
             except:
                 print(error_description)
             else:
