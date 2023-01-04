@@ -47,22 +47,19 @@ class Hangman():
                     raise Exception()
                 elif guess in self.list_of_guesses:
                     print("You already tried that letter!")
-                # elif len(guess) > 1:
-                #     error_description = "Oops invalid input: More than one letter"    
-                #     raise Exception()
-                # elif not(guess.isalpha()):
-                #     error_description = " Oops invalid input: This is not a letter"   
-                #     raise Exception() 
-                else:
-                    self.check_guess(guess)
-                    self.list_of_guesses.append(guess)
-                    # self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
+                elif len(guess) > 1:
+                    error_description = "Oops invalid input: More than one letter"    
+                    raise Exception()
+                elif not(guess.isalpha()):
+                    error_description = " Oops invalid input: This is not a letter"   
+                    raise Exception() 
+                #else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                # self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
             except:
                 print(error_description)
             else:
                 break   
         # self.list_of_guesses.append(guess)
         # return self.list_of_guesses
-
-
-Hangman.ask_for_input()
