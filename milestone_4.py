@@ -27,11 +27,19 @@ class Hangman():
 
     def check_guess(self,guess):
         """This function checks if the guess provided is in the word"""
+        print(self.word_guessed) # shows inital length of word obfuscated with "_"
 
         guess = guess.lower()
 
         if guess in self.word.lower():
             print(f"Good guess! {guess} is in the word.")
+            for index_no, y in enumerate(self.word,0): # using enumerate instead of a counter (no need to set count = 0 and increment at end of each iteration)
+                if y == guess:
+                    # guess.index(y) ## can't use because this runs into problems for words with common characters as it only returns the pos of the first char
+                    self.word_guessed[index_no] = guess
+
+            self.num_letters -=1
+        print(self.word_guessed) # Shows word with correctly guessed letter positions revealed
         # else:
         #     print(f"Sorry {guess} is not in word. Try again.")            
 
