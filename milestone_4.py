@@ -27,7 +27,7 @@ class Hangman():
 
     def check_guess(self,guess):
         """This function checks if the guess provided is in the word"""
-        print(self.word_guessed) # shows inital length of word obfuscated with "_"
+        #print(self.word_guessed) # shows inital length of word obfuscated with "_"
         self.word = self.word.lower()
         guess = guess.lower()
 
