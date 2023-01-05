@@ -5,7 +5,7 @@ class Hangman():
 
         self.word_list = word_list
         self.num_lives = num_lives
-        self.word = random.choice(word_list).lower()
+        self.word = random.choice(word_list) 
         self.word_guessed = []
         self.list_of_guesses = []
         self.num_letters = 0
@@ -28,7 +28,7 @@ class Hangman():
     def check_guess(self,guess):
         """This function checks if the guess provided is in the word"""
         print(self.word_guessed) # shows inital length of word obfuscated with "_"
-
+        self.word = self.word.lower()
         guess = guess.lower()
 
         if guess in self.word.lower():
