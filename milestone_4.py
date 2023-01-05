@@ -1,6 +1,6 @@
 import random
 class Hangman():
-    """"""
+    """Hangman game"""
     def __init__(self, word_list, num_lives = 5 ) -> None:
 
         self.word_list = word_list
@@ -10,7 +10,7 @@ class Hangman():
         self.list_of_guesses = []
         self.num_letters = 0
         uniquecounter = 0
-        
+
         for x in self.word:
             self.word_guessed.append("_")
 
@@ -19,10 +19,8 @@ class Hangman():
                 if z not in self.word[:uniquecounter]:
                     self.num_letters +=1
             else:
-                self.num_letters +=1 
-
-            uniquecounter +=1        
-    pass   
+                self.num_letters +=1
+            uniquecounter +=1
 
 
     def check_guess(self,guess):
@@ -48,20 +46,17 @@ class Hangman():
 
 
     def ask_for_input(self):
-
+        """Asks the user for a guess"""
         while True:
+            guess = input("Enter a single letter: ")
 
-                guess = input("Enter a single letter: ")
-
-                if not(len(guess) == 1) and not(guess.isalpha()):
-                    print("Invalid letter. Please, enter a single alphabetical character")
-
-                elif guess in self.list_of_guesses:
-                    print("You already tried that letter!")
-                    
-                else:
-                    self.check_guess(guess)
-                    # self.list_of_guesses.append(guess)
-                    self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
-                    break   
-        return
+            if not len(guess) == 1 and not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                # self.list_of_guesses.append(guess)
+                self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
+                break
+            return
