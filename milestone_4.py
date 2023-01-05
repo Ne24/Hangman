@@ -5,7 +5,7 @@ class Hangman():
 
         self.word_list = word_list
         self.num_lives = num_lives
-        self.word = random.choice(word_list)
+        self.word = random.choice(word_list).lower()
         self.word_guessed = []
         self.list_of_guesses = []
         self.num_letters = 0
@@ -39,9 +39,13 @@ class Hangman():
                     self.word_guessed[index_no] = guess
 
             self.num_letters -=1
-        print(self.word_guessed) # Shows word with correctly guessed letter positions revealed
-        # else:
-        #     print(f"Sorry {guess} is not in word. Try again.")            
+            print(self.word_guessed) # Shows word with correctly guessed letter positions revealed
+        else:
+            self.num_lives -=1
+            print(f"Sorry {guess} is not in word.")
+            print(f"You have {self.num_lives} lives left")
+
+
 
     def ask_for_input(self):
 
