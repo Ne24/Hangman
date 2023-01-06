@@ -28,3 +28,6 @@ Currently it checks:
 2. entry is a letter 
 
 If input is valid, the loop is broken and the value of guess passed to the check_guess function.
+
+# milestone 4
+
