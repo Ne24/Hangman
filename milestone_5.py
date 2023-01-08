@@ -38,7 +38,7 @@ class Hangman():
                     self.word_guessed[index_no] = guess
 
             self.num_letters -=1
-            print(self.word_guessed) # Shows word with correctly guessed letter positions revealed
+            print(self.word_guessed)  # Shows word with correctly guessed letter positions revealed
         else:
             self.num_lives -=1
             print(f"Sorry, {guess} is not in the word.")
@@ -60,7 +60,7 @@ class Hangman():
             else:
                 self.check_guess(guess)
                 # self.list_of_guesses.append(guess)
-                self.list_of_guesses.insert(0, guess) # prepends guess to the list_of_guesses
+                self.list_of_guesses.insert(0, guess)  # Prepends guess to the list_of_guesses
                 break
         return
 
